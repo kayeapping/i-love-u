@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Valentine Letter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aldrich&family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+
+
+<audio id="bgMusic" loop>
+  <source src="./lagu.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const music = document.getElementById("bgMusic");
+  music.volume = 0.5;
+
+  document.addEventListener("click", function startMusic() {
+    music.play();
+  }, { once: true });
+</script>
+
+
+<!-- Thank You Screen -->
+<div id="thankyou-screen">
+  <div class="thankyou-card">
+    <h1>♡ A Little Note for You ♡</h1>
+
+    <p>
+      Thank you for coming into my life.
+      Thank you for every little thing you do,
+      for your time, your kindness, and for
+      making my days a little brighter.
+    </p>
+
+    <p>
+      I'm really grateful to have you here.
+      There's something else I want to tell you...
+    </p>
+
+    <button id="continue-btn">
+      One more thing ♡
+    </button>
+  </div>
+</div>
+
+
+    <!-- Envelope Screen -->
+    <div id="envelope-container">
+      <img src="envelope.png" alt="Envelope" id="envelope" />
+      <p>♡ Letter for Adel ♡</p>
+    </div>
+
+    <!-- Letter Screen -->
+    <div id="letter-container">
+      <div class="letter-window">
+        <h1 id="letter-title">Will you be my Wife, Adel?</h1>
+
+        <img src="cat_heart.gif" class="cat" id="letter-cat" />
+
+        <div class="buttons" id="letter-buttons">
+          <img src="yes.png" class="btn yes-btn" alt="Yes" />
+
+          <div class="no-wrapper">
+            <img src="no.png" class="btn no-btn" alt="No" />
+          </div>
+        </div>
+
+        <p id="final-text" class="final-text" style="display: none">
+          <strong>Wedding Notes:</strong> I love you, Adel! 
+        </p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    
+<script>
+  document.getElementById("continue-btn").addEventListener("click", () => {
+    document.getElementById("thankyou-screen").style.display = "none";
+
+    const envelope = document.getElementById("envelope-container");
+    envelope.style.display = "flex";
+    envelope.style.visibility = "visible";
+    envelope.style.opacity = "1";
+  });
+</script>
+
+  </body>
+</html>
